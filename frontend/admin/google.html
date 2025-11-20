@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin – Google API Keys</title>
+  <link rel="stylesheet" href="../css/google_admin.css">
+</head>
+<body>
+  <header>
+    <div class="header-main">
+      <div>
+        <h1>Google Reviews API Keys</h1>
+        <p class="subtitle">
+          Manage and document Google Places API keys. In this sandbox, keys are stored locally and
+          tests are mocked (backend uses mocked Google data).
+        </p>
+      </div>
+      <div>
+        <a href="../index.html" class="back-link">← Back to Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Add New API Key</h2>
+      <div class="form-row">
+        <label for="key-label">Label</label>
+        <input type="text" id="key-label" placeholder="e.g. Production key, Test key" />
+      </div>
+      <div class="form-row">
+        <label for="key-value">API key</label>
+        <input type="text" id="key-value" placeholder="AIza..." />
+      </div>
+      <button id="add-key-btn" class="btn primary">Add key</button>
+      <p class="hint">
+        Keys are stored in your browser only (localStorage). In a real deployment, keys would be
+        stored securely on the server.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Saved keys</h2>
+      <div id="keys-list" class="keys-list">
+        <!-- JS injects cards here -->
+      </div>
+      <p class="hint">
+        Mark one key as <strong>Default</strong> for documentation purposes. In this sandbox,
+        tests are mocked and do not call Google’s live API.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Mock test</h2>
+      <div class="form-row">
+        <label for="test-place-id">Place ID (for documentation)</label>
+        <input
+          type="text"
+          id="test-place-id"
+          placeholder="e.g. ChIJN1t_tDeuEmsRUsoyG83frY4"
+        />
+      </div>
+      <button id="test-default-btn" class="btn">Test default key (mock)</button>
+      <pre id="test-result" class="test-result"></pre>
+    </section>
+  </main>
+
+  <script src="../js/google_admin.js"></script>
+</body>
+</html>

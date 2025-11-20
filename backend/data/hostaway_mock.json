@@ -1,0 +1,38 @@
+{
+  "status": "success",
+  "result": [
+    {
+      "id": 7453,
+      "type": "host-to-guest",
+      "status": "published",
+      "rating": null,
+      "publicReview": "Shane and family are wonderful! Would definitely host again :)",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 10 },
+        { "category": "communication", "rating": 10 },
+        { "category": "respect_house_rules", "rating": 10 }
+      ],
+      "submittedAt": "2020-08-21 22:45:14",
+      "guestName": "Shane Finkelstein",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "direct"
+    },
+    {
+      "id": 7454,
+      "type": "guest-to-host",
+      "status": "published",
+      "rating": 9.5,
+      "publicReview": "Great stay, amazing location but a bit noisy at night.",
+      "reviewCategory": [
+        { "category": "cleanliness", "rating": 9 },
+        { "category": "communication", "rating": 10 },
+        { "category": "location", "rating": 10 },
+        { "category": "value", "rating": 8 }
+      ],
+      "submittedAt": "2020-09-02 13:12:00",
+      "guestName": "John Doe",
+      "listingName": "2B N1 A - 29 Shoreditch Heights",
+      "channel": "airbnb"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "status": "OK",
+  "result": {
+    "name": "Flex Living – Shoreditch Apartment",
+    "rating": 4.6,
+    "user_ratings_total": 48,
+    "reviews": [
+      {
+        "author_name": "James Wilson",
+        "rating": 5,
+        "text": "Amazing stay! The apartment was spotless and check-in was smooth. Highly recommended.",
+        "time": 1730080000
+      },
+      {
+        "author_name": "Anna Petrova",
+        "rating": 4,
+        "text": "Great location and comfortable bed. WiFi could be slightly faster but overall very good.",
+        "time": 1727500000
+      },
+      {
+        "author_name": "Michael Chen",
+        "rating": 5,
+        "text": "Perfect for a business trip. Quiet, modern, and walking distance to many great restaurants.",
+        "time": 1726000000
+      },
+      {
+        "author_name": "Sarah Thompson",
+        "rating": 3,
+        "text": "Nice apartment but check-in was delayed by 30 minutes. Otherwise fine.",
+        "time": 1723000000
+      },
+      {
+        "author_name": "John Evans",
+        "rating": 5,
+        "text": "Absolutely loved it. The balcony view was stunning. Will book again soon!",
+        "time": 1719000000
+      }
+    ]
+  }
+}

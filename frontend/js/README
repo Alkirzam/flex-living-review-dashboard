@@ -1,0 +1,49 @@
+# Flex Living – Reviews Dashboard
+
+This project implements the Flex Living Developer Assessment: a reviews dashboard that helps managers monitor property performance, spot issues, and decide which guest reviews should appear on the public website.
+
+---
+
+## 1. Tech Stack
+
+**Backend**
+
+- Python 3.10
+- FastAPI
+- Uvicorn
+- JSON files as data source (mock Hostaway + mock Google)
+
+**Frontend**
+
+- Plain HTML, CSS, JavaScript (no frameworks)
+- Chart.js (via CDN) for simple charts
+- LocalStorage for:
+  - Approved reviews
+  - Saved filter views
+  - Internal review status and notes
+  - Mock Google API keys
+
+---
+
+## 2. Project Structure
+
+```text
+backend/
+  main.py                 # FastAPI app and API routes
+  requirements.txt        # fastapi, uvicorn
+  data/
+    hostaway_mock.json    # Provided Hostaway reviews mock
+    google_mock.json      # Mocked Google Places response
+
+frontend/
+  index.html              # Manager dashboard
+  property.html           # Property details + public reviews section
+  css/
+    styles.css            # Main dashboard / property styling
+    google_admin.css      # Styling for Google API key admin page
+  js/
+    dashboard.js          # All dashboard logic (filters, charts, approvals, etc.)
+    property.js           # Loads approved reviews for a single property
+    google_admin.js       # Google API key management (mocked)
+  admin/
+    google.html           # Google API key management UI

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flex Living – Reviews Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Chart.js for graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div>
+        <h1>Reviews Dashboard</h1>
+        <p>Monitor property performance and manage public reviews.</p>
+      </div>
+      <div class="header-actions">
+        <button id="dark-mode-toggle" class="tag-button dark-toggle">
+          🌙 Dark mode
+        </button>
+        <a href="admin/google.html" class="admin-link">Google API Key Manager</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Summary cards -->
+    <section id="listing-summary"></section>
+
+    <!-- Filters -->
+    <section id="filters">
+      <h2>Filters</h2>
+      <div class="filters-grid">
+        <div class="filter-item">
+          <label for="filter-listing">Property</label>
+          <select id="filter-listing">
+            <option value="all">All properties</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-channel">Channel</label>
+          <select id="filter-channel">
+            <option value="all">All channels</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-type">Review type</label>
+          <select id="filter-type">
+            <option value="all">All types</option>
+            <option value="guest-to-host">Guest → Host</option>
+            <option value="host-to-guest">Host → Guest</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-min-rating">Min rating (/5)</label>
+          <input id="filter-min-rating" type="number" min="0" max="5" step="0.5" />
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-source">Source</label>
+          <select id="filter-source">
+            <option value="all">Hostaway + Google</option>
+            <option value="hostaway">Hostaway only</option>
+            <option value="google">Google only</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-sentiment">Sentiment</label>
+          <select id="filter-sentiment">
+            <option value="all">All</option>
+            <option value="Positive">Positive</option>
+            <option value="Neutral">Neutral</option>
+            <option value="Negative">Negative</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-topic">Topic</label>
+          <select id="filter-topic">
+            <option value="all">All topics</option>
+            <option value="WiFi">WiFi</option>
+            <option value="Cleanliness">Cleanliness</option>
+            <option value="Location">Location</option>
+            <option value="Check-in">Check-in</option>
+            <option value="Noise">Noise</option>
+            <option value="Staff">Staff</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="filter-time">Time</label>
+          <select id="filter-time">
+            <option value="all">All time</option>
+            <option value="last_30">Last 30 days</option>
+            <option value="last_90">Last 90 days</option>
+          </select>
+        </div>
+
+        <div class="filter-item checkbox-item">
+          <label>
+            <input id="filter-only-approved" type="checkbox" />
+            Show only approved for website
+          </label>
+        </div>
+      </div>
+
+      <!-- Saved views -->
+      <div class="saved-views-row">
+        <input
+          type="text"
+          id="saved-view-name"
+          placeholder="View name (e.g. Low ratings last month)"
+        />
+        <button id="save-view-btn" class="tag-button">💾 Save view</button>
+
+        <select id="saved-views-select">
+          <option value="">Saved views…</option>
+        </select>
+        <button id="apply-view-btn" class="tag-button">Apply</button>
+        <button id="delete-view-btn" class="tag-button">Delete</button>
+      </div>
+    </section>
+
+    <!-- Reviews table -->
+    <section id="reviews-table">
+      <div class="section-header">
+        <h2>Reviews</h2>
+        <div class="section-actions">
+          <button id="export-csv-btn" class="tag-button">
+            ⬇ Export current view (CSV)
+          </button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Rating</th>
+              <th>Sentiment</th>
+              <th>Topics</th>
+              <th>Channel</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Review</th>
+              <th>Status</th>
+              <th>Note</th>
+              <th>Website</th>
+              <th>Open property</th>
+            </tr>
+          </thead>
+          <tbody id="reviews-tbody">
+            <!-- JS will inject rows here -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="pagination-controls">
+        <button id="page-prev" class="tag-button">Prev</button>
+        <span id="page-info"></span>
+        <button id="page-next" class="tag-button">Next</button>
+      </div>
+    </section>
+
+    <!-- Analytics section -->
+    <section id="analytics">
+      <h2>Insights</h2>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Average rating per property</h3>
+          <canvas id="chart-rating-per-property"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Review count per property</h3>
+          <canvas id="chart-count-per-property"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
